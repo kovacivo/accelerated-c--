@@ -53,7 +53,7 @@ std::map<std::string, std::vector<int> > generate_cross_ref_table(std::istream& 
 		++line_number;
 	
 		// split input line into words
-		std::vector<std::string> words = split(line);
+		std::vector<std::string> words = find_words(line);
 
 		// remember the position of each word
 		for (std::vector<std::string>::const_iterator it = words.begin(); it != words.end(); ++it)
