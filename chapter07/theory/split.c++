@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include "split.h"
 
 // true if the argument is whitespace, false otherwise
 bool space(char c)
@@ -40,20 +41,4 @@ std::vector<std::string> split (const std::string& str)
 	
 	return ret;
 
-}
-
-int main()
-{
-	std::string s;
-	// read and split each line of input
-	while (getline(std::cin, s))
-	{
-		std::vector<std::string> v = split(s);
-
-		// write each word in v
-		for (std::vector<std::string>::size_type i = 0; i != v.size(); ++i)
-			std::cout << v[i] << std::endl;
-	}
-
-	return 0;
 }
