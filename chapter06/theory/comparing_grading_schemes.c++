@@ -53,8 +53,8 @@ int main()
 
 	// do the analysis
 	write_analysis(cout,"median", median_analysis, did, didnt);
-	write_analysis(cout,"average", average_analysis, did, didnt);
-	// write_analysis(cout,"median of homework turned in", optimistic_median_analysis, did, didnt);
+	// write_analysis(cout,"average", average_analysis, did, didnt);
+	write_analysis(cout,"median of homework turned in", optimistic_median, did, didnt);
 
 	vector<Student_info> failed = extract_fails(did);
 	print_vector_Studentinfo(failed);
