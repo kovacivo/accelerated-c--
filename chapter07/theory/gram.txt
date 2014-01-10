@@ -1,0 +1,15 @@
+<podstatne>	liska
+<podstatne>	Fico 
+<postatne> kapusta 
+<podstatne> spenat 
+<podstatne> maso 
+<podstatne> ovocie 
+<podstatne> kino
+<podstatne> zmrd
+<sloveso> jebat 
+<sloveso> kundit 
+<sloveso> vystrajat
+<miesto> Bratislava 
+<miesto> obyvacka 
+<miesto> plaz
+<sentence> <podstatne> <sloveso> <miesto>

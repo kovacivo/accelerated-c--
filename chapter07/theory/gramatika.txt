@@ -1,0 +1,13 @@
+<podstatne>		liska
+<podstatne> 	Fico
+<podstatne> zmrd
+<podstatne> papez
+<sloveso> jebat kundit trtkat mrdat povedat utekat steklit
+<sloveso> hovoril spomenul modlil_sa
+<pridavne> drbnuty jebavy pekny skaredy zamrznuty teplucky
+<pridavne> zjazveny
+<pridavne> vseveduci nicnetusiaci
+<miesto> Praha Slovensko lavicka pri_peci gauc
+<cas> vecer prednedavnom o_polnoci predpoludnim
+<veta> <pridavne> <podstatne> kvakal v <miesto> <cas>
+<veta> <podstatne> <sloveso> <miesto> <cas>
