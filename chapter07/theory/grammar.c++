@@ -7,6 +7,7 @@
 #include "split.h"
 #include <stdexcept>
 #include <cstdlib>
+#include <time.h>
 
 typedef std::vector<std::string> Rule;
 typedef	std::vector<Rule> Rules_collection;
@@ -39,7 +40,9 @@ bool inbracketes(const std::string& s)
 
 int random_num(int n)
 {
-	std::cout << "in random_num function the number n is: " << n << std::endl;
+	srand (time(NULL));
+
+	//std::cout << "in random_num function the number n is: " << n << std::endl;
 	int random_number = 0;
 	if (n <= 0 || n > RAND_MAX)
 		throw std::domain_error("Argument to random_num is out of range");
