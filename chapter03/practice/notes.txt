@@ -1,0 +1,5 @@
+To exercise 3.2:
+================
+- I had to change the last part of program within while loop when displaying quartiles
+- the problem was counting on vector size function will return the actual number of elements
+- for some reason I was getting segmentation fault after inputing certain number of values; quartiles values were 5, 6 or 7
