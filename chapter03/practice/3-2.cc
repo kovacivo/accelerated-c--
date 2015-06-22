@@ -30,8 +30,7 @@ int main()
 	typedef vector<int>::size_type vec_sz;
 	vec_sz integers_size = integers.size();
 	if (integers_size == 0) {
-		cout << endl << "You must enter your numbers.  "
-		                "Please try again." << endl;	
+		cout << endl << "You must enter your numbers. Please try again." << endl;	
 		return 1;
 	}
 
@@ -42,17 +41,20 @@ int main()
   cout << "Quartile size is " << quartile_size << endl;
 
   int tmp = 0;
-  while(integers.size() > 0) {
+  int int_velkost = integers.size();
+  //while(integers.size() > 0) {
+  while(int_velkost > 0) {
     tmp = 0;
     while (tmp < quartile_size) {
-    	cout << integers[(integers.size()-1)] << " ";
+    	//cout << integers[(integers.size()-1)] << " ";
+    	cout << integers[int_velkost--] << " ";
   	  integers.pop_back(); 
       tmp++;
     }
     cout << endl;
   }
 
+  cout << "Vector integers has got size now of: " << integers.capacity() << endl;
   cout << "Program now ends." << endl;
 	return 0;
 }
-
