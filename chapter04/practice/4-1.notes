@@ -1,0 +1,16 @@
+We noted in §4.2.3/65 that it is essential that the argument types in a call to max
+match exactly. Will the following code work? If there is a problem, how would you fix it?
+
+int maxlen;
+Student_info s;
+max(s.name.size(), maxlen);
+
+My answer: when maxlen is defined as int, the program normally won't compile; it will compile only in case there will
+           be recast to vector size type, like the following:
+
+while (read(cin, record)) {
+		// find length of longest name
+		maxlen = max((string::size_type)maxlen, record.name.size());  --> recast from int type to size_type of vector
+		students.push_back(record);
+	}
+
