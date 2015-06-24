@@ -71,15 +71,15 @@ int main()
 
 		// prompt for another user data - name and grades
  		cout << "Put your name here folowed by end-of-file (CTRL+D): " << endl;
-	}	
+  }	
 
-	// print the results
-	cout << endl << "Student name\t\t\tFinal grade" << endl << endl;
-	int i = 0;
-	while(i < student_names.size()){
-		cout << student_names[i] << "\t\t\t\t" << student_grades[i] << endl;
-		i++;
-	}
+  // print the results
+  cout << endl << "Student name\t\t\tFinal grade" << endl << endl;
+  int i = 0;
+  while(i < student_names.size()){
+    cout << student_names[i] << "\t\t\t\t" << student_grades[i] << endl;
+    i++;
+  }
 
-	return 0;
+  return 0;
 }
