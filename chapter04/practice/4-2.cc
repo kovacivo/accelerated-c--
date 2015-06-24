@@ -3,6 +3,14 @@
 // that value. Use setw (described above) to manage the output so that the values line up
 // in columns.
 
+// 4-3: What happens if we rewrite the previous program to allow values up to but not
+// including 1000 but neglect to change the arguments to setw ? Rewrite the program to
+// be more robust in the face of changes that allow i to grow without adjusting the setw
+// arguments.
+
+// 4-4: Now change your squares program to use double values instead of int s. Use
+// manipulators to manage the output so that the values line up in columns.
+
 #include <algorithm>
 #include <iomanip>
 #ifndef __GNUC__
