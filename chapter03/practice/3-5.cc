@@ -27,11 +27,11 @@ int main()
   vector<double> student_grades;
 
   cout << "Program keeps track of final grades for several students at once." << endl;
-	string name;
+  string name;
 
-	// ask for and read the student names and put them into student_names vector
+  // ask for and read the student names and put them into student_names vector
   // for each student ask to enter his/her grades, compute final grade and put it into student_grades vector
- 	cout << "Put your name here folowed by end-of-file (CTRL+D): " << endl;
+  cout << "Put your name here folowed by end-of-file (CTRL+D): " << endl;
   while (cin >> name) {
 		student_names.push_back(name);
 		
