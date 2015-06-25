@@ -14,7 +14,3 @@ Student_info.h and Student_info.cc:
 grade.h and grade.cc:
 ---------------------
 -function "grade(const Student_info&)" was removed as its functionality was performed within read function -> directly reading homework grades into vector
-
-main3.cc:
----------
--"double final_grade = grade(students[i]);" line was removed and replaced by displaying result directly from "Student_info" member variable grade
