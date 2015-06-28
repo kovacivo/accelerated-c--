@@ -47,11 +47,12 @@ vector<string> frameit(vector<string> s) {
   for (vector<string>::const_iterator i = s.begin(); i != s.end(); i++) {
 		// string tmp = '* ' + (*i) + string((max_string_length - (*i).size() - 1), ' ') + ' *';
 		//string spaces(' ', longest_string(s) - (*i).size() - 1);
-		string tmp1 = "* " + (*i);
-	  	string tmp2 =	(max_string_length - (*i).size() - 1, " ");
-		cout << "In frameit function tmp2 puts "<< max_string_length << " - " << (*i).size() << " spaces" << endl;
+		string tmp = "* " + (*i);
+	  	string tmp2 =	(max_string_length - (*i).size(), " ");
+		cout << "In frameit function tmp2 puts "<< max_string_length << " - " << (*i).size() << " spaces: " << max_string_length - (*i).size() << endl;
 	   string tmp3 =  " *"; 
-		string tmp = tmp1 + tmp2 + tmp3;
+		tmp = tmp + tmp2;
+		tmp = tmp + tmp3;
 		framed_strings.push_back(tmp);
 	}
 
