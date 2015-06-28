@@ -41,23 +41,15 @@ vector<string> frameit(vector<string> s) {
   string::size_type max_string_length = longest_string(s);
 
   // first put the top frame
-  framed_strings.push_back(string( max_string_length + 4, '*'));
+  framed_strings.push_back(string('**', max_string_length));
 
   // put the text into picture
   for (vector<string>::const_iterator i = s.begin(); i != s.end(); i++) {
 		// string tmp = '* ' + (*i) + string((max_string_length - (*i).size() - 1), ' ') + ' *';
 		//string spaces(' ', longest_string(s) - (*i).size() - 1);
-		string tmp1 = "* " + (*i);
-	  	string tmp2 =	(max_string_length - (*i).size() - 1, " ");
-		cout << "In frameit function tmp2 puts "<< max_string_length << " - " << (*i).size() << " spaces" << endl;
-	   string tmp3 =  " *"; 
-		string tmp = tmp1 + tmp2 + tmp3;
+		string tmp = "* " + (*i) + string(' ', max_string_length - (*i).length() - 1) + " *"; 
 		framed_strings.push_back(tmp);
 	}
-
-  // at the end put the bottom frame
-  framed_strings.push_back(string( max_string_length + 4, '*'));
-
 	return framed_strings;
 }
 
