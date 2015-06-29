@@ -29,7 +29,7 @@ string::size_type longest_string(const vector<string>& string_vector) {
 }
 
 // function to frame the sentence into words returning framed vector - picture
-vector<string> frameit(vector<string> s) {
+vector<string> frameit(const vector<string> s) {
 
 	// frame to put in result
 	vector<string> framed_strings;
@@ -52,3 +52,20 @@ vector<string> frameit(vector<string> s) {
 
 	return framed_strings;
 }
+
+// function to vertically join two vectors of words to create one picture
+vector<string> vframeit(const vector<string> top, const vector<string> bottom) {
+
+	// frame to put in result
+	vector<string> framed_strings;
+
+	// first put the top picture
+	framed_strings = top;
+
+	// then add (insert) the second picture
+	framed_strings.insert(framed_strings.end(), bottom.begin(), bottom.end());
+
+	// frame the whole picture
+	return frameit(framed_strings);
+}
+
