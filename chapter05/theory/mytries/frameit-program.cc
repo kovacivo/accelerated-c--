@@ -32,7 +32,8 @@ int main()
 		input_words.push_back(s);
 
 	// frame the words
-	framed_words = frameit(input_words);
+	//framed_words = vframeit(input_words);
+	framed_words = hframeit(input_words);
 
 	// print every word of vector
 	for (vector<string>::const_iterator i = framed_words.begin(); i != framed_words.end(); ++i)

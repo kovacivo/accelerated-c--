@@ -69,3 +69,27 @@ vector<string> vframeit(const vector<string> top, const vector<string> bottom) {
 	return frameit(framed_strings);
 }
 
+// function to horizontally join two vectors of words to create one picture
+vector<string> hframeit(const vector<string> left, const vector<string> right) {
+
+	// frame to put in result
+	vector<string> framed_strings;
+
+	// need to know which of those two is bigger picture
+	vector<string>::size_type left_size = left.size();
+	vector<string>::size_type right_size = right.size();
+	
+	if (left_size > right_size) {
+		for (vector<string>::const_iterator i = left.begin(); i != left.end(); ++i) {
+					for (vector<string>::const_iterator i = left.begin(), vector<string>::const_iterator j = right.begin(); i != left.end(); ++i, ++j) {
+					framed_strings.push_back(string((*i) + ' ' + (*j)));
+		}
+	} else {
+				for (vector<string>::const_iterator i = right.begin(), vector<string>::const_iterator j = left.begin(); i != right.end(); ++i, ++j) {
+					framed_strings.push_back(string((*i) + ' ' + (*j)));
+				}
+	}
+
+	// frame the whole picture
+	return frameit(framed_strings);
+}
