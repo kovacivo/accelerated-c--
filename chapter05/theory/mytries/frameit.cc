@@ -1,23 +1,22 @@
-// program is from chapter 5.8; 
+// program is from chapter 5.8 - theory; 
 // it should define and use frameit function to frame the sentences in vector of words
 
-#include <algorithm>
 #include <iomanip>
 #ifndef __GNUC__
 #include <ios>
 #endif
 #include <iostream>
-#include <stdexcept>
 #include <string>
 #include <vector>
 
 using std::cin;                     using std::setprecision;
-using std::cout;                    using std::sort;
-using std::domain_error;            using std::streamsize;
+using std::cout;                   
+using std::streamsize;
 using std::endl;                    using std::string;
 using std::vector;
 
 // helper function to find the longest string within vector of words
+// returns the length of longest string
 string::size_type longest_string(const vector<string>& string_vector) {
 	// string size to be returned
 	string::size_type longest_string = 0;
@@ -27,7 +26,6 @@ string::size_type longest_string(const vector<string>& string_vector) {
 		if (longest_string < (*i).size())
 			longest_string = (*i).size();
 
-	cout << "In function longest_string the longest string was: " << longest_string << endl;
 	return longest_string;
 }
 
@@ -40,23 +38,17 @@ vector<string> frameit(vector<string> s) {
 	// longest string
   string::size_type max_string_length = longest_string(s);
 
-  // first put the top frame
+  // first put the top of frame
   framed_strings.push_back(string( max_string_length + 4, '*'));
+  framed_strings.push_back('*' + string( max_string_length + 2, ' ') + '*');
 
   // put the text into picture
-  for (vector<string>::const_iterator i = s.begin(); i != s.end(); i++) {
-		// string tmp = '* ' + (*i) + string((max_string_length - (*i).size() - 1), ' ') + ' *';
-		//string spaces(' ', longest_string(s) - (*i).size() - 1);
-		string tmp = "* " + (*i);
-	  	string tmp2 =	(max_string_length - (*i).size(), " ");
-		cout << "In frameit function tmp2 puts "<< max_string_length << " - " << (*i).size() << " spaces: " << max_string_length - (*i).size() << endl;
-	   string tmp3 =  " *"; 
-		tmp = tmp + tmp2;
-		tmp = tmp + tmp3;
-		framed_strings.push_back(tmp);
+  for (vector<string>::const_iterator i = s.begin(); i != s.end(); ++i) {
+		framed_strings.push_back("* " + (*i) + string(max_string_length - (*i).size(), ' ') + " *");
 	}
 
-  // at the end put the bottom frame
+  // at the end put the bottom of frame
+  framed_strings.push_back('*' + string( max_string_length + 2, ' ') + '*');
   framed_strings.push_back(string( max_string_length + 4, '*'));
 
 	return framed_strings;
@@ -66,14 +58,16 @@ vector<string> frameit(vector<string> s) {
 // program tests the functionality of split function 
 int main()
 {
+	// string to input
 	string s;	
+	// vector holding the list of words
 	vector<string> input_words;
+	// vector holding the resulted picture
 	vector<string> framed_words;
 
 	// read and split every line of input
 	while (cin >> s) 
 		input_words.push_back(s);
-
 
 	// frame the words
 	framed_words = frameit(input_words);
@@ -81,8 +75,6 @@ int main()
 	// print every word of vector
 	for (vector<string>::const_iterator i = framed_words.begin(); i != framed_words.end(); ++i)
 			cout << (*i) << endl;
-	
 
 	return 0;
 }
-
