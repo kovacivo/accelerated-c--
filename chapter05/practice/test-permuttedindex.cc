@@ -42,9 +42,23 @@ int main()
 	
 	// for every string in vector of strings
 	for (vector<string>::const_iterator it = sentences.begin(); it != sentences.end(); ++it) {
+
 		// for every string/sentence
-		for (string::const_iterator sit = it->begin(); sit != it->end(); ++sit)
+		// generate temporary vector of strings - later it will be easier to make permutted index from it
+		//for (string::const_iterator sit = it->begin(); sit != it->end(); ++sit) {
+		vector<string> temporary;
+		for (string::const_iterator sit = it->begin(); sit != it->end(); ) {   // I'll update iterator/index within for loop
 			cout << (*sit) << " " << endl;
+			// skip spaces if there are any
+			while (isspace((*sit)))
+				++sit;
+			// 
+
+		// print temporary vector of strings from sentence
+		}
+
+
+
 	}
 
 	// output the result 
