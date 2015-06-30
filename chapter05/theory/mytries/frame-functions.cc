@@ -15,8 +15,8 @@ using std::endl;                    using std::string;
 using std::vector;
 
 // helper function to find the longest string within vector of words
-// returns the length of longest string
 string::size_type longest_string(const vector<string>& string_vector) {
+	// returns the length of longest string
 	// string size to be returned
 	string::size_type longest_string = 0;
 	
@@ -70,7 +70,6 @@ vector<string> vcat(const vector<string> top, const vector<string> bottom) {
 }
 
 // function to horizontally join two vectors of words to create one picture
-/*
 vector<string> hcat(const vector<string> left, const vector<string> right) {
 
 	// frame to put in result
@@ -80,18 +79,38 @@ vector<string> hcat(const vector<string> left, const vector<string> right) {
 	vector<string>::size_type left_size = left.size();
 	vector<string>::size_type right_size = right.size();
 	
+	// if the left picture is bigger
 	if (left_size > right_size) {
-		for (vector<string>::const_iterator i = left.begin(); i != left.end(); ++i) {
-					for (vector<string>::const_iterator i = left.begin(), vector<string>::const_iterator j = right.begin(); i != left.end(); ++i, ++j) {
-					framed_strings.push_back(string((*i) + ' ' + (*j)));
+
+		// for every line of words in left vector
+		vector<string>::const_iterator rit = right.begin();
+		for (vector<string>::const_iterator lit = left.begin(); lit != left.end(); ++lit) {
+			// if there is nothing on right side, just skip it
+			if (rit == right.end()) {
+				framed_strings.push_back(string((*lit) + " " + " "));	
+				continue;
+			} else {
+				framed_strings.push_back(string((*lit) + " " + (*rit)));	
+				++rit;
+			}
 		}
+
+	// otherwise the right picture is bigger
 	} else {
-				for (vector<string>::const_iterator i = right.begin(), vector<string>::const_iterator j = left.begin(); i != right.end(); ++i, ++j) {
-					framed_strings.push_back(string((*i) + ' ' + (*j)));
-				}
+		// for every line of words in left vector
+		vector<string>::const_iterator lit = left.begin();
+		for (vector<string>::const_iterator rit = right.begin(); rit != right.end(); ++rit) {
+			// if there is nothing on right side, just skip it
+			if (lit == left.end()) {
+				framed_strings.push_back(string((*rit) + " " + " "));	
+				continue;
+			} else {
+				framed_strings.push_back(string((*lit) + " " + (*rit)));	
+				++lit;
+			}
+		}
 	}
 
 	// frame the whole picture
 	return frameit(framed_strings);
 }
-*/
