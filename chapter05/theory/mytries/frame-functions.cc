@@ -70,6 +70,7 @@ vector<string> vframeit(const vector<string> top, const vector<string> bottom) {
 }
 
 // function to horizontally join two vectors of words to create one picture
+/*
 vector<string> hframeit(const vector<string> left, const vector<string> right) {
 
 	// frame to put in result
@@ -93,3 +94,4 @@ vector<string> hframeit(const vector<string> left, const vector<string> right) {
 	// frame the whole picture
 	return frameit(framed_strings);
 }
+*/
