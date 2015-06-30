@@ -47,10 +47,26 @@ int main()
 		// generate temporary vector of strings - later it will be easier to make permutted index from it
 		//for (string::const_iterator sit = it->begin(); sit != it->end(); ++sit) {
 		vector<string> temporary_vector;
-		for (string::iterator sit = it->begin(); sit != it->end(); ++sit) {   // I'll update iterator/index within for loop
-			//cout << (*sit) << " ";
 
+		string::iterator sit = (*it).begin();
+		string::iterator jj = sit;
+		while (sit != (*it).end()) {
+			while ((sit != (*it).end() && isspace((*sit))))
+				++sit;
+
+			jj = sit;	
+			while (jj != (*it).end() && !isspace((*jj)))
+				++jj;
+			if (sit != jj) {
+					cout << string(sit, jj) << endl;
+					sit = jj;
+			}
 		}
+
+		// print temporary_vector
+		for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit)
+			cout << "$$$" << (*tit) << "$$$" << endl;
+
 	}
 
 	// output the result 
