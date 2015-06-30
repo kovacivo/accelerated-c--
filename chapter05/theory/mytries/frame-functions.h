@@ -22,9 +22,9 @@ string::size_type longest_string(const vector<string>& string_vector);
 vector<string> frameit(const vector<string> s); 
 
 // function to vertically join two vectors of words to create one picture
-vector<string> vframeit(const vector<string> top, const vector<string> bottom);
+vector<string> vcat(const vector<string> top, const vector<string> bottom);
 
 // function to horizontally join two vectors of words to create one picture
-vector<string> hframeit(const vector<string> left, const vector<string> right);
+vector<string> hcat(const vector<string> left, const vector<string> right);
 
 #endif /* frame-functions.h */
