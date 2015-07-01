@@ -33,12 +33,11 @@ int main()
 		sentences.push_back(sentence + '.');
 
 	// for every sentence in vector of sentences generate a set of rotations
-	// take every sentence/string
-	// first print spaces plus one more space and then whole sentence
-	// then parse sentence 
-	// find out the longest sentence
+	
+	// first I need to get a vector of strings to rotate them later
+	// I need to split the vector of strings in each sentence to every word
 	vector<string>::size_type longest_sentence = longest_string(sentences);
-	cout << "Longest string/sentence had " << int(longest_sentence) << " chars." << endl;
+	//cout << "Longest string/sentence had " << int(longest_sentence) << " chars." << endl;
 	
 	// for every string in vector of strings
 	for (vector<string>::iterator it = sentences.begin(); it != sentences.end(); ++it) {
@@ -64,23 +63,36 @@ int main()
 			}
 		}
 
-		// start printing rotations - that is: permutted index
+		// now I've got the words in a separate vector - temporary vector - and need to rotate them
+
+		
 		// first line is always indented by spaces of its whole length
 		// find out the length of given sentence and print the spaces
 		string::size_type spaces_to_indent = (*it).size();
+		
+
 		// number of spaces to print to separate index part from the remaining part of sentence
 		int indent_spaces = 8;
-		cout << string(spaces_to_indent + 1, ' ');
+		cout << string(spaces_to_indent + 1, ' ') << (*it) << endl;
+		
 
 		// rotate every word in sentence and indent it apropriately
-		for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit) {
-			cout << (*tit) << string(indent_spaces, ' ');
+		for (vector<string>::iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit){
+			for (vector<string>::iterator rit = temporary_vector.begin(); rit != temporary_vector.end(); ++rit){
+				string::size_type period = rit->find_first_of(".");
+				if (period)
+					cout << (*rit) << string(indent_spaces, ' ');
+				else
+					cout << (*rit) << " ";
+			}
+			cout << endl;
+			temporary_vector.push_back(temporary_vector.front());
+			temporary_vector.erase(temporary_vector.begin());
 		}
 
-
 		// print temporary_vector
-		for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit)
-			cout << "$$$" << (*tit) << "$$$" << endl;
+		//for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit)
+		//	cout << "$$$" << (*tit) << "$$$" << endl;
 
 	}
 
