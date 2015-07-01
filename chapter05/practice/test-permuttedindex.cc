@@ -30,7 +30,7 @@ int main()
 
 	// read and save every sentence/line into vector of sentences
 	while (getline(cin, sentence))
-		sentences.push_back(sentence + ".--------");
+		sentences.push_back(sentence + "--------");
 
 	// for every sentence in vector of sentences generate a set of rotations
 	
@@ -84,8 +84,11 @@ int main()
 			for (vector<string>::iterator rit = temporary_vector.begin(); rit != temporary_vector.end(); ++rit){
 				cout << (*rit) << " ";
 			}
-			temporary_vector.push_back(temporary_vector.front());
+			string tmp = temporary_vector.front();
 			temporary_vector.erase(temporary_vector.begin());
+			//temporary_vector.push_back(temporary_vector.front());
+			temporary_vector.push_back(tmp);
+			//temporary_vector.erase(temporary_vector.begin());
 			cout << endl;
 		}
 
