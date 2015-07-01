@@ -58,11 +58,25 @@ int main()
 			while (jj != (*it).end() && !isspace((*jj)))
 				++jj;
 			if (sit != jj) {
-					cout << string(sit, jj) << endl;
+					//cout << string(sit, jj) << endl;
 					temporary_vector.push_back(string(sit, jj));
 					sit = jj;
 			}
 		}
+
+		// start printing rotations - that is: permutted index
+		// first line is always indented by spaces of its whole length
+		// find out the length of given sentence and print the spaces
+		string::size_type spaces_to_indent = (*it).size();
+		// number of spaces to print to separate index part from the remaining part of sentence
+		int indent_spaces = 8;
+		cout << string(spaces_to_indent + 1, ' ');
+
+		// rotate every word in sentence and indent it apropriately
+		for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit) {
+			cout << (*tit) << string(indent_spaces, ' ');
+		}
+
 
 		// print temporary_vector
 		for (vector<string>::const_iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit)
@@ -71,8 +85,8 @@ int main()
 	}
 
 	// output the result 
-	for (vector<string>::const_iterator it = sentences.begin(); it != sentences.end(); ++it)
-			cout << "###" << (*it) << "###" << endl;
+	//for (vector<string>::const_iterator it = sentences.begin(); it != sentences.end(); ++it)
+	//		cout << "###" << (*it) << "###" << endl;
 
 	return 0;
 }
