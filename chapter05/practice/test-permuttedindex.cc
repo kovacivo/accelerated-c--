@@ -30,7 +30,7 @@ int main()
 
 	// read and save every sentence/line into vector of sentences
 	while (getline(cin, sentence))
-		sentences.push_back(sentence + '.');
+		sentences.push_back(sentence + ".--------");
 
 	// for every sentence in vector of sentences generate a set of rotations
 	
@@ -77,17 +77,16 @@ int main()
 		
 
 		// rotate every word in sentence and indent it apropriately
+		vector<string> rotated_words;
+
+		string::size_type period;
 		for (vector<string>::iterator tit = temporary_vector.begin(); tit != temporary_vector.end(); ++tit){
 			for (vector<string>::iterator rit = temporary_vector.begin(); rit != temporary_vector.end(); ++rit){
-				string::size_type period = rit->find_first_of(".");
-				if (period)
-					cout << (*rit) << string(indent_spaces, ' ');
-				else
-					cout << (*rit) << " ";
+				cout << (*rit) << " ";
 			}
-			cout << endl;
 			temporary_vector.push_back(temporary_vector.front());
 			temporary_vector.erase(temporary_vector.begin());
+			cout << endl;
 		}
 
 		// print temporary_vector
